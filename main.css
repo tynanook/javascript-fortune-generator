@@ -1,0 +1,150 @@
+/* Fortune Cookie Generator Styles */
+
+*{
+    padding: 0;
+    margin: 0; 
+}
+
+html {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e4e4e4;
+}
+
+body {
+    max-width:1000px;
+    max-height:780px;
+    margin: 0 auto;
+}
+
+h1 {
+    display: inline;
+    text-align: left;
+    padding-right: 0px; 
+    font-weight: 200;
+}
+
+button {
+    margin-right: 30px;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    padding: 3px 15px;
+    position: relative;
+    top: -3px;
+    display: inline;
+}
+
+#plate {
+    background-image: url("img/plate.jpg");
+    width: 1000px;
+    height: 668px;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+
+/* ================================================ */
+/* == COOKIE - hover over & show current fortune ==*/
+/* ============================================== */
+
+#cookie-full {
+background-image: url("img/fortune_cookie_largecanvas.png"); 
+  position: absolute;
+  top: 200px;
+  width: 500px;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;  
+}
+
+#cookie-partial {  
+  background-image: url("img/fortune_cookie_largecanvas.png");  
+  width: 500px;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+    overflow: hidden;
+    -webkit-clip-path: polygon(100% 0%, 13% 0%, 28% 100%, 100% 100%);
+}
+
+
+#fortune-banner {
+    background-image: url("img/fortune_paper.png"); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 400px;
+    position: absolute;
+    top: 90px;
+    left: -275px;     /* ? -280 to 60px */
+    -webkit-transition: all .5s ease-in-out;
+    z-index: 20000;
+}
+
+#fortune-banner:active, #fortune-banner:focus, #fortune-banner:hover {
+    -webkit-transition: all 1s ease-in-out;
+    left: 64px;
+    z-index: 20000;
+}
+ 
+/* not used but will use for comparison */
+#cookie-overlay {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    background-color: red;
+    top: 40px;
+    left: 12px;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+#fortune-text {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.0); 
+    padding-left: 0px;
+    left: 50px;
+    top: 10px;
+    width: 310px;
+    height: 60px;
+    display: inline-block;
+}
+
+span {
+  font-family: 'Inconsolata', arial ;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* ================================================ */
+/* == SIDE BAR - list all generated fortunes     ==*/
+/* ============================================== */
+
+#previous-fortunes-container {
+    position: absolute;
+    width: 210px;
+    height: 668px;
+    left: 790px;
+    overflow-y: scroll;
+}
+
+li {
+    height: 46px;
+    width: 200px;
+    background-image: url("./img/fortune_paper.png");
+    font-family: 'Inconsolata', arial;
+    font-size: 0.6rem;
+    position: relative;
+}
+
+li div {
+    position: absolute;
+    width: 190px;
+    top: 12px;
+    left: 10px;    
+}
